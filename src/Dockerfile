@@ -1,5 +1,7 @@
 # Como o projeto é feito em Node utilizar como base imagem oficial do Node
-FROM node
+# É uma boa prática definir a versão da imagem base porque se não for definido sempre será utilizado a última versão, 
+# o que pode alterar algum funcionamento de versões anteriores. Importante manter a idempotência.
+FROM node:18.16.0
 # Entrar no diretório /app
 WORKDIR /app 
 # Copiar todo arquivo que se inicie com 'package' e seja extensão .json
